@@ -11,11 +11,45 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧠%3C/text%3E%3C/svg%3E">
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --hover-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            --border-radius: 12px;
+            /* Primary Color Palette - Modern Blue/Purple Gradient */
+            --primary-color: #2563eb;
+            --primary-light: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #7c3aed;
+            --accent-color: #06b6d4;
+            
+            /* Background Gradients */
+            --main-gradient: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            --card-gradient: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            --primary-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            
+            /* Shadows */
+            --card-shadow: 0 4px 20px rgba(37, 99, 235, 0.08);
+            --hover-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+            --glow-shadow: 0 0 30px rgba(37, 99, 235, 0.2);
+            
+            /* Text Colors */
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --text-white: #ffffff;
+            
+            /* Background Colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-muted: #f1f5f9;
+            
+            /* Interactive Colors */
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            
+            /* Design System */
+            --border-radius: 16px;
+            --border-radius-sm: 8px;
+            --border-radius-lg: 24px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --spacing: 1.5rem;
         }
         
         * {
@@ -66,10 +100,29 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
+            background: var(--main-gradient);
+            color: var(--text-white);
             text-align: center;
-            padding: 30px 20px;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--primary-gradient);
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .header * {
+            position: relative;
+            z-index: 2;
         }
         
         .header h1 {
@@ -111,124 +164,174 @@
         }
         
         .dept-header {
-            padding: 20px 25px;
-            font-size: 1.4em;
-            font-weight: bold;
-            color: white;
+            padding: 1.5rem 2rem;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: var(--text-white);
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        .admin { background: linear-gradient(135deg, #e74c3c, #c0392b); }
-        .treasury { background: linear-gradient(135deg, #f39c12, #e67e22); }
-        .research { background: linear-gradient(135deg, #3498db, #2980b9); }
-        .education { background: linear-gradient(135deg, #2ecc71, #27ae60); }
-        .technology { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
-        .public-affairs { background: linear-gradient(135deg, #1abc9c, #16a085); }
-        .legislative { background: linear-gradient(135deg, #34495e, #2c3e50); }
+        .dept-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+            z-index: 1;
+        }
+        
+        .dept-header * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Cohesive Blue-Purple Color Scheme */
+        .admin { background: var(--primary-gradient); }
+        .treasury { background: linear-gradient(135deg, var(--primary-light), var(--accent-color)); }
+        .research { background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); }
+        .education { background: linear-gradient(135deg, var(--accent-color), var(--primary-color)); }
+        .technology { background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); }
+        .public-affairs { background: linear-gradient(135deg, var(--primary-light), var(--secondary-color)); }
+        .legislative { background: linear-gradient(135deg, var(--primary-dark), var(--secondary-color)); }
         
         .dept-content {
-            background: #f8f9fa;
-            padding: 25px;
+            background: var(--bg-secondary);
+            padding: 2rem;
         }
         
         .position {
-            margin-bottom: 20px;
-            padding: 20px;
-            background: white;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--card-gradient);
             border-radius: var(--border-radius);
-            border-left: 4px solid #3498db;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--primary-color);
+            box-shadow: var(--card-shadow);
             transition: var(--transition);
         }
         
         .position:hover {
             transform: translateX(8px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: var(--hover-shadow);
             border-left-width: 6px;
+            border-left-color: var(--secondary-color);
         }
         
         .position-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1em;
         }
         
         .position-name {
-            color: #e74c3c;
+            color: var(--primary-color);
             font-weight: 500;
-            margin-bottom: 8px;
+            margin-bottom: 0.75rem;
+            font-size: 1em;
         }
         
         .position-description {
-            color: #7f8c8d;
+            color: var(--text-secondary);
             font-size: 0.9em;
-            line-height: 1.4;
+            line-height: 1.5;
         }
         
         .sub-committee {
-            margin-left: 20px;
-            margin-top: 15px;
-            padding-left: 20px;
-            border-left: 2px dashed #bdc3c7;
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+            border-left: 2px dashed var(--text-muted);
         }
         
         .committee-members {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 0.75rem;
+            margin-top: 1rem;
         }
         
         .member {
-            background: #ecf0f1;
-            padding: 8px 16px;
+            background: var(--bg-muted);
+            padding: 0.5rem 1rem;
             border-radius: 25px;
-            font-size: 0.9em;
-            color: #2c3e50;
+            font-size: 0.85em;
+            color: var(--text-primary);
             transition: var(--transition);
             cursor: pointer;
             border: 2px solid transparent;
+            font-weight: 500;
         }
         
         .member:hover {
-            background: #3498db;
-            color: white;
+            background: var(--primary-color);
+            color: var(--text-white);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+            box-shadow: var(--card-shadow);
+            border-color: var(--primary-light);
         }
         
         .open-position {
-            background: #fadbd8;
-            color: #c0392b;
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--error);
             font-style: italic;
+            border-color: rgba(239, 68, 68, 0.2);
+        }
+        
+        .open-position:hover {
+            background: var(--error);
+            color: var(--text-white);
         }
         
         .star {
-            color: #f39c12;
-            margin-left: 5px;
+            color: var(--warning);
+            margin-left: 0.25rem;
+            font-weight: 600;
         }
         
         .footer {
-            background: #2c3e50;
-            color: white;
+            background: var(--main-gradient);
+            color: var(--text-white);
             text-align: center;
-            padding: 30px 20px;
+            padding: 2rem;
             font-size: 0.9em;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--primary-gradient);
+            opacity: 0.05;
+            z-index: 1;
+        }
+        
+        .footer * {
+            position: relative;
+            z-index: 2;
         }
         
         .footer p {
-            opacity: 0.8;
-            margin-bottom: 10px;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
         }
         
         .footer a {
-            color: #3498db;
+            color: var(--accent-color);
             text-decoration: none;
             transition: var(--transition);
         }
         
         .footer a:hover {
-            color: #2980b9;
+            color: var(--primary-light);
             text-decoration: underline;
         }
         
