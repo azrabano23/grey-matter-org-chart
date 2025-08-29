@@ -2,15 +2,6 @@
 
 A modern, interactive organizational chart for Grey Matter at Yale University.
 
-## ✨ Features
-
-- 🎨 Modern, responsive design with smooth animations
-- 📱 Mobile-friendly interface
-- ✨ Interactive hover effects
-- 🧠 Brain emoji favicon
-- 🌐 Optimized for web deployment
-- 🎯 Clean, professional layout
-
 ## 🏢 Departments
 
 - **Administrative Department** - Leadership and operations
@@ -20,26 +11,6 @@ A modern, interactive organizational chart for Grey Matter at Yale University.
 - **Technology & Engineering Department** - Software and hardware projects
 - **Public Affairs Department** - Marketing, outreach, and recruitment
 - **Legislative Department** - Advocacy and government relations
-
-## 🚀 Quick Deploy to Vercel
-
-1. **One-Click Deploy**: Upload the `index.html` file directly to Vercel
-2. **GitHub Integration**: 
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/your-username/grey-matter-org-chart.git
-   git push -u origin main
-   ```
-   Then connect to Vercel through their GitHub integration
-
-3. **Vercel CLI**:
-   ```bash
-   npm install -g vercel
-   vercel
-   ```
 
 ## 💻 Local Development
 
@@ -61,7 +32,7 @@ grey-matter-org-chart/
 └── README.md          # This documentation
 ```
 
-## 🛠 Customization
+## Customization
 
 The organizational chart is fully self-contained in `index.html`. To make changes:
 
@@ -82,7 +53,7 @@ The organizational chart is fully self-contained in `index.html`. To make change
 }
 ```
 
-## 🎨 Design Features
+## Design Features
 
 - **Inter Font Family** - Modern typography from Google Fonts
 - **Smooth Animations** - CSS3 transitions and hover effects
@@ -91,14 +62,14 @@ The organizational chart is fully self-contained in `index.html`. To make change
 - **Interactive Elements** - Hover effects on positions and member tags
 - **Clean Card Design** - Modern card-based layout with shadows
 
-## 📱 Mobile Responsiveness
+## Mobile Responsiveness
 
 The design automatically adapts to different screen sizes:
 - **Desktop**: Full layout with hover effects
 - **Tablet**: Optimized spacing and typography
 - **Mobile**: Single-column layout with adjusted member tags
 
-## 🌐 Browser Support
+## Browser Support
 
 - ✅ Chrome (latest)
 - ✅ Firefox (latest)  
@@ -106,7 +77,7 @@ The design automatically adapts to different screen sizes:
 - ✅ Edge (latest)
 - ✅ Mobile browsers
 
-## 📄 Technologies Used
+## Technologies Used
 
 - **HTML5** - Semantic markup
 - **CSS3** - Modern styling with Grid, Flexbox, and animations
@@ -114,14 +85,14 @@ The design automatically adapts to different screen sizes:
 - **CSS Variables** - For easy theming and customization
 - **Responsive Design** - Mobile-first approach
 
-## 🎯 Performance
+## Performance
 
 - **Single File** - Entire application in one HTML file
 - **No Dependencies** - Pure HTML/CSS/JavaScript
 - **Fast Loading** - Optimized images and efficient CSS
 - **SEO Friendly** - Proper meta tags and semantic HTML
 
-## 🔧 Development
+## Development
 
 This is a static HTML application that requires no build process. Simply edit the `index.html` file to make changes.
 
@@ -144,7 +115,7 @@ This is a static HTML application that requires no build process. Simply edit th
 </div>
 ```
 
-## 📝 License
+## License
 
 MIT License - Free to use and modify for educational purposes.
 
