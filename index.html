@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grey Matter - Organizational Chart (2025-2026)</title>
+    <meta name="description" content="Official organizational chart for Grey Matter 2025-2026 academic year">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧠%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--primary-gradient);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .org-chart {
+            padding: 40px 20px;
+        }
+        
+        .department {
+            margin-bottom: 40px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            animation: slideInLeft 0.6s ease-out;
+            animation-fill-mode: backwards;
+        }
+        
+        .department:nth-child(1) { animation-delay: 0.1s; }
+        .department:nth-child(2) { animation-delay: 0.2s; }
+        .department:nth-child(3) { animation-delay: 0.3s; }
+        .department:nth-child(4) { animation-delay: 0.4s; }
+        .department:nth-child(5) { animation-delay: 0.5s; }
+        .department:nth-child(6) { animation-delay: 0.6s; }
+        .department:nth-child(7) { animation-delay: 0.7s; }
+        
+        .department:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .dept-header {
+            padding: 20px 25px;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+        
+        .admin { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .treasury { background: linear-gradient(135deg, #f39c12, #e67e22); }
+        .research { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .education { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+        .technology { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .public-affairs { background: linear-gradient(135deg, #1abc9c, #16a085); }
+        .legislative { background: linear-gradient(135deg, #34495e, #2c3e50); }
+        
+        .dept-content {
+            background: #f8f9fa;
+            padding: 25px;
+        }
+        
+        .position {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            border-left: 4px solid #3498db;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+        
+        .position:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-left-width: 6px;
+        }
+        
+        .position-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .position-name {
+            color: #e74c3c;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .position-description {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .sub-committee {
+            margin-left: 20px;
+            margin-top: 15px;
+            padding-left: 20px;
+            border-left: 2px dashed #bdc3c7;
+        }
+        
+        .committee-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .member {
+            background: #ecf0f1;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            color: #2c3e50;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .member:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+        
+        .open-position {
+            background: #fadbd8;
+            color: #c0392b;
+            font-style: italic;
+        }
+        
+        .star {
+            color: #f39c12;
+            margin-left: 5px;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9em;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+            
+            .org-chart {
+                padding: 20px 10px;
+            }
+            
+            .dept-content {
+                padding: 15px;
+            }
+            
+            .committee-members {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Grey Matter</h1>
+            <p>Organizational Chart (2025–2026)</p>
+        </div>
+        
+        <div class="org-chart">
+            <!-- Administrative Department -->
+            <div class="department">
+                <div class="dept-header admin">Administrative Department</div>
+                <div class="dept-content">
+                    <div class="position">
+                        <div class="position-title">President</div>
+                        <div class="position-name">Azra Bano<span class="star">*</span></div>
+                        <div class="position-description">→ Leads all departments, oversees initiatives, official Yale Grey Matter ties</div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Vice President, Chief of Staff</div>
+                        <div class="position-name">Hoorain Fatima<span class="star">*</span></div>
+                        <div class="position-description">→ Supports President, HR/point of contact for interpersonal issues</div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Events & Operations Lead</div>
+                        <div class="position-name">Ayush Gohil<span class="star">*</span></div>
+                        <div class="position-description">→ Logistics, room bookings, event coordination</div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Diversity, Equity & Inclusion (DE&I) Lead</div>
+                        <div class="position-name">Bryan Quizado<span class="star">*</span></div>
+                        <div class="position-description">→ Ensures inclusivity, outreach to underserved communities</div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Secretary</div>
+                        <div class="position-name">Sameer Masood<span class="star">*</span></div>
+                        <div class="position-description">→ Documentation, Google Drive, forms, Slack/Zoom links</div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Helpers</div>
+                        <div class="committee-members">
+                            <span class="member">Tanvi Vardhini Mahesh Vidya</span>
+                            <span class="member">Rahul Zaveri</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Treasury Department -->
+            <div class="department">
+                <div class="dept-header treasury">Treasury Department (under Admin)</div>
+                <div class="dept-content">
+                    <div class="position">
+                        <div class="position-title">Co-Treasurers</div>
+                        <div class="position-name">Muneeb Aslam<span class="star">*</span> (RUSA Allocations)</div>
+                        <div class="position-name">Pranjal Patel<span class="star">*</span> (Club Funding)</div>
+                        
+                        <div class="sub-committee">
+                            <div class="position-title">Fundraising Committee</div>
+                            <div class="position-name">Chair: Shikha Patnaik</div>
+                            <div class="committee-members">
+                                <span class="member open-position">+3 Open Positions (supported by Public Affairs until filled)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Research Department -->
+            <div class="department">
+                <div class="dept-header research">Research Department</div>
+                <div class="dept-content">
+                    <div class="position">
+                        <div class="position-title">Director of Research</div>
+                        <div class="position-name">Nihal Yeruva<span class="star">*</span></div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Research Scholars</div>
+                        <div class="committee-members">
+                            <span class="member">Rahul Zaveri</span>
+                            <span class="member">Tanvi Vidya</span>
+                            <span class="member">Julie Renosa</span>
+                            <span class="member">Prabav Ramakrishnan</span>
+                        </div>
+                        <div class="position-description">→ Mentor and track research groups, report to Director</div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Editor-in-Chief</div>
+                        <div class="position-name open-position">[Open]</div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Associate Editors</div>
+                        <div class="position-name open-position">[Open]</div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Grey Matter Research Symposium</div>
+                        <div class="position-description">→ Hosted by Research Dept (Spring 2026)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education Department -->
+            <div class="department">
+                <div class="dept-header education">Education Department</div>
+                <div class="dept-content">
+                    <div class="position">
+                        <div class="position-title">Director of Education</div>
+                        <div class="position-name">Heny Shah<span class="star">*</span></div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Education Committee</div>
+                        <div class="committee-members">
+                            <span class="member">Roanne Altairi</span>
+                            <span class="member">Ibrahim Siddiqui</span>
+                            <span class="member">Shrinika Mandava</span>
+                            <span class="member">Henri Xhukellari</span>
+                        </div>
+                        <div class="position-description">→ Create and deliver curriculum, partner with Outreach for events</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technology & Engineering Department -->
+            <div class="department">
+                <div class="dept-header technology">Technology & Engineering Department</div>
+                <div class="dept-content">
+                    <div class="position">
+                        <div class="position-title">Director</div>
+                        <div class="position-name">Yash Chennawar<span class="star">*</span></div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Technology Committee</div>
+                        <div class="committee-members">
+                            <span class="member">Ishaan Myrie</span>
+                            <span class="member">Sameen Majid</span>
+                            <span class="member">Alveera Munshi</span>
+                            <span class="member">Shrutika Mandava</span>
+                            <span class="member">Aishee Goswami</span>
+                        </div>
+                        <div class="position-description">→ Software, workshops, support product development</div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Engineering Committee</div>
+                        <div class="committee-members">
+                            <span class="member">Saarthak Shah</span>
+                            <span class="member">Ishani Jena</span>
+                        </div>
+                        <div class="position-description">→ Hardware/engineering workshops, support product development</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Public Affairs Department -->
+            <div class="department">
+                <div class="dept-header public-affairs">Public Affairs Department</div>
+                <div class="dept-content">
+                    <div class="position">
+                        <div class="position-title">Directors of Marketing</div>
+                        <div class="position-name">Tulja Patel<span class="star">*</span>, Jessica Fernandes<span class="star">*</span></div>
+                        <div class="position-description">→ Social media, website, branding</div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Directors of Outreach & Recruitment</div>
+                        <div class="position-name">Marisa Syed<span class="star">*</span>, Bryan Quizado<span class="star">*</span></div>
+                        <div class="position-description">→ K–12 outreach, institutional partnerships, speaker recruitment</div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Committee Members</div>
+                        <div class="committee-members">
+                            <span class="member">Sai Nakka</span>
+                            <span class="member">Rayyan Motiwala</span>
+                            <span class="member">Hira Usman</span>
+                            <span class="member">Alefiya Matawala</span>
+                            <span class="member">Kate Sabo</span>
+                            <span class="member">Jasmine Levinsky</span>
+                            <span class="member">Ayse Akyurt</span>
+                            <span class="member">Varsha Santosh</span>
+                        </div>
+                        <div class="position-description">→ Rotating tasks: event planning, content, outreach</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Legislative Department -->
+            <div class="department">
+                <div class="dept-header legislative">Legislative Department</div>
+                <div class="dept-content">
+                    <div class="position">
+                        <div class="position-title">Director of Legislative Affairs</div>
+                        <div class="position-name">Harsh Dharmendran<span class="star">*</span></div>
+                        <div class="position-description">→ Advocacy, student government, government relations</div>
+                    </div>
+                    
+                    <div class="position">
+                        <div class="position-title">Committee Members</div>
+                        <div class="committee-members">
+                            <span class="member">Noorhan Desouky</span>
+                            <span class="member">Devanshi Vaidya</span>
+                            <span class="member">Usman Khan</span>
+                        </div>
+                        <div class="position-description">→ Legislative outreach, policy advocacy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>* indicates executive board member</p>
+            <p>Grey Matter · Yale University · 2025–2026</p>
+        </div>
+    </div>
+</body>
+</html>

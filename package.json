@@ -1,0 +1,26 @@
+{
+  "name": "grey-matter-org-chart",
+  "version": "1.0.0",
+  "description": "Grey Matter Organizational Chart for 2025-2026 academic year",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve .",
+    "build": "echo 'Static site, no build required'",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "organizational-chart",
+    "grey-matter",
+    "yale-university",
+    "static-website"
+  ],
+  "author": "Grey Matter - Yale University",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
