@@ -5,9 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "npx serve .",
-    "start": "npx serve .",
-    "build": "echo 'Static site, no build required'",
-    "serve": "npx serve ."
+    "start": "npx serve ."
   },
   "keywords": [
     "organizational-chart",
@@ -17,9 +15,6 @@
   ],
   "author": "Grey Matter - Yale University",
   "license": "MIT",
-  "devDependencies": {
-    "serve": "^14.0.0"
-  },
   "engines": {
     "node": ">=16"
   }
